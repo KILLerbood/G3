@@ -1,0 +1,113 @@
+/*
+ * G3 «علاقات» design tokens: warm paper, deep forest green, terracotta clay, ochre.
+ * A ledger feel: serif numerals, hairline rules, portraits with rings. Light is the default.
+ * The old token names are kept so every existing page picks up the new identity automatically.
+ */
+:root {
+  /* brand constants (both themes) */
+  --g-forest: #1f4d3a;
+  --g-forest-2: #2c6a50;
+  --g-forest-deep: #143528;
+  --g-clay: #b4532a;
+  --g-clay-2: #e08a5f;
+  --g-ochre: #c08a2b;
+  --g-paper: #fbf7ef;
+  --g-ink: #1f1d18;
+
+  --f-display: 'El Messiri', 'Tajawal', Georgia, serif;
+  --f-display-ar: 'El Messiri', 'Tajawal', serif;
+  --f-body: 'Inter', 'Tajawal', system-ui, -apple-system, 'Segoe UI', Tahoma, sans-serif;
+  --f-num: Georgia, 'Iowan Old Style', 'Palatino Linotype', 'Times New Roman', serif;
+  --f-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  --r-card: 18px; --r-l: 16px; --r-m: 12px; --r-s: 10px; --r-xs: 6px;
+  --ease: cubic-bezier(.22, .9, .3, 1);
+  --t-fast: 140ms; --t-med: 220ms; --t-slow: 360ms;
+  --header-h: 68px; --rail-w: 0px; --side-w: 252px;
+
+  /* the old instagram gradients are gone: «gradients» are now quiet forest washes */
+  --m-y: #c08a2b; --m-o: #b4532a; --m-p: #b4532a; --m-v: #1f4d3a; --m-b: #2f5e8c;
+  --grad: linear-gradient(110deg, #1f4d3a 0%, #2c6a50 60%, #b4532a 140%);
+  --grad-btn: linear-gradient(180deg, #2c6a50, #1f4d3a);
+  --grad-soft: linear-gradient(135deg, rgba(31, 77, 58, .10), rgba(180, 83, 42, .08));
+  --dot-1: #b23a2e; --dot-2: #c9682f; --dot-3: #c08a2b; --dot-4: #6f9a52; --dot-5: #2f7a4f;
+}
+
+:root, [data-theme='light'] {
+  --bg: #f3eee4;
+  --card: #fffcf6;
+  --card-2: #f7f1e6;
+  --card-hover: #fbf6ec;
+  --sunken: #ece5d7;
+  --line: #e4dac8;
+  --line-2: #cdbfa7;
+  --ink: #1f1d18;
+  --ink-2: #4c473d;
+  --ink-3: #6a6355;
+  --highlight: #f3dfb5;
+  --highlight-ink: #3b2a0b;
+  --highlight-ink-2: rgba(59, 42, 11, .72);
+  --accent: #b4532a;
+  --accent-soft: rgba(180, 83, 42, .11);
+  --active: #1f4d3a;
+  --active-ink: #fbf7ef;
+  --good: #2f7a4f; --good-soft: #e1eee4;
+  --warn: #9a6008; --warn-soft: #f8ebd2;
+  --bad: #b23a2e;  --bad-soft: #f7e0db; --bad-solid: #a3332a;
+  --cnt-ink: #fffcf6;
+  --info: #2f5e8c; --info-soft: #e1eaf3;
+  --glass: rgba(243, 238, 228, .86);
+  --scrim: rgba(31, 29, 24, .38);
+  --shadow-1: 0 1px 0 rgba(31, 29, 24, .04), 0 1px 2px rgba(31, 29, 24, .06);
+  --shadow-2: 0 2px 0 rgba(31, 29, 24, .03), 0 8px 24px -12px rgba(31, 29, 24, .22);
+  --shadow-pop: 0 18px 48px -12px rgba(31, 29, 24, .28), 0 0 0 1px var(--line);
+  --heat-0: #e6ddcb; --heat-1: #d9cba9; --heat-2: #c9b57f; --heat-3: #b39a59; --heat-4: #8d8f4f; --heat-5: #5f854f; --heat-6: #3f6f4c; --heat-7: #1f4d3a;
+  --hatch: rgba(31, 29, 24, .05);
+  --side-bg: #1f4d3a;
+  --side-ink: #f4ecdc;
+  --side-ink-2: rgba(244, 236, 220, .68);
+  --side-hover: rgba(251, 247, 239, .08);
+  --side-active: #fbf7ef;
+  --side-active-ink: #1f4d3a;
+  --paper-grain: radial-gradient(rgba(120, 96, 60, .05) 1px, transparent 1px);
+  color-scheme: light;
+}
+[data-theme='dark'] {
+  --bg: #111916;
+  --card: #18221e;
+  --card-2: #1f2b26;
+  --card-hover: #1d2823;
+  --sunken: #0c1310;
+  --line: #2a3832;
+  --line-2: #3c4d45;
+  --ink: #f1eadb;
+  --ink-2: #c4bba8;
+  --ink-3: #9d9583;
+  --highlight: #e7c886;
+  --highlight-ink: #241805;
+  --highlight-ink-2: rgba(36, 24, 5, .7);
+  --accent: #e3895c;
+  --accent-soft: rgba(227, 137, 92, .14);
+  --active: #8fcfaa;
+  --active-ink: #0f1d16;
+  --good: #79c79a; --good-soft: rgba(121, 199, 154, .14);
+  --warn: #e3b25a; --warn-soft: rgba(227, 178, 90, .14);
+  --bad: #ec7f70;  --bad-soft: rgba(236, 127, 112, .14); --bad-solid: #c44a3c;
+  --cnt-ink: #0f1d16;
+  --info: #8db6e0; --info-soft: rgba(141, 182, 224, .14);
+  --glass: rgba(17, 25, 22, .86);
+  --scrim: rgba(0, 0, 0, .55);
+  --shadow-1: 0 1px 0 rgba(0, 0, 0, .2);
+  --shadow-2: 0 10px 28px -14px rgba(0, 0, 0, .6);
+  --shadow-pop: 0 18px 50px rgba(0, 0, 0, .5), 0 0 0 1px var(--line);
+  --heat-0: #2a3530; --heat-1: #3a4636; --heat-2: #4f5838; --heat-3: #66693b; --heat-4: #6f7f45; --heat-5: #5f9165; --heat-6: #6fb08a; --heat-7: #8fcfaa;
+  --hatch: rgba(241, 234, 219, .05);
+  --side-bg: #0c1511;
+  --side-ink: #f1eadb;
+  --side-ink-2: rgba(241, 234, 219, .6);
+  --side-hover: rgba(241, 234, 219, .06);
+  --side-active: #8fcfaa;
+  --side-active-ink: #0f1d16;
+  --paper-grain: radial-gradient(rgba(255, 255, 255, .025) 1px, transparent 1px);
+  color-scheme: dark;
+}
